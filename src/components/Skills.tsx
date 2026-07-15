@@ -17,25 +17,25 @@ import {
 
 interface Skill {
   name: string;
-  category: "Frontend" | "Backend" | "Tools";
+  category: "Frontend" | "Backend" | "AI/ML" | "Data" | "Tools";
   icon: React.ComponentType<{ className?: string }>;
   color: string;
   level: string;
 }
 
 const skillsList: Skill[] = [
-  { name: "React", category: "Frontend", icon: Code2, color: "from-blue-400 to-cyan-500", level: "95%" },
-  { name: "Next.js", category: "Frontend", icon: Globe2, color: "from-white to-gray-400", level: "90%" },
-  { name: "TypeScript", category: "Frontend", icon: ShieldCheck, color: "from-blue-500 to-indigo-600", level: "92%" },
-  { name: "Tailwind CSS", category: "Frontend", icon: Wind, color: "from-cyan-400 to-teal-500", level: "98%" },
-  { name: "Framer Motion", category: "Frontend", icon: Zap, color: "from-purple-400 to-pink-500", level: "88%" },
-  { name: "HTML5", category: "Frontend", icon: Layers, color: "from-orange-400 to-red-500", level: "95%" },
-  { name: "CSS3", category: "Frontend", icon: Palette, color: "from-blue-400 to-indigo-500", level: "90%" },
-  { name: "JavaScript", category: "Frontend", icon: FileCode, color: "from-yellow-400 to-amber-500", level: "94%" },
-  { name: "Node.js", category: "Backend", icon: Server, color: "from-green-400 to-emerald-600", level: "85%" },
-  { name: "REST APIs", category: "Backend", icon: Cpu, color: "from-purple-500 to-indigo-500", level: "90%" },
-  { name: "Git / GitHub", category: "Tools", icon: GitBranch, color: "from-orange-500 to-red-600", level: "88%" },
-  { name: "Figma UI/UX", category: "Tools", icon: PenTool, color: "from-pink-400 to-rose-500", level: "82%" }
+  { name: "React.js", category: "Frontend", icon: Code2, color: "from-blue-400 to-cyan-500", level: "92%" },
+  { name: "JavaScript", category: "Frontend", icon: FileCode, color: "from-yellow-400 to-amber-500", level: "90%" },
+  { name: "HTML5 / CSS3", category: "Frontend", icon: Layers, color: "from-orange-400 to-red-500", level: "90%" },
+  { name: "Responsive UI/UX", category: "Frontend", icon: Palette, color: "from-pink-400 to-rose-500", level: "88%" },
+  { name: "Node.js", category: "Backend", icon: Server, color: "from-green-400 to-emerald-600", level: "86%" },
+  { name: "Express.js APIs", category: "Backend", icon: Cpu, color: "from-purple-500 to-indigo-500", level: "86%" },
+  { name: "MongoDB", category: "Data", icon: Globe2, color: "from-emerald-400 to-teal-600", level: "84%" },
+  { name: "MySQL / SQL", category: "Data", icon: ShieldCheck, color: "from-blue-500 to-indigo-600", level: "82%" },
+  { name: "Python", category: "AI/ML", icon: Zap, color: "from-purple-400 to-pink-500", level: "86%" },
+  { name: "NLP with PyTorch", category: "AI/ML", icon: Wind, color: "from-cyan-400 to-teal-500", level: "78%" },
+  { name: "Azure ML / Cosmos DB", category: "AI/ML", icon: PenTool, color: "from-sky-400 to-blue-600", level: "80%" },
+  { name: "Git / GitHub", category: "Tools", icon: GitBranch, color: "from-orange-500 to-red-600", level: "88%" }
 ];
 
 export default function Skills() {
@@ -146,7 +146,7 @@ export default function Skills() {
           </h2>
           
           <p className="mt-4 text-gray-400 max-w-xl text-sm sm:text-base leading-relaxed">
-            Leveraging the latest production-grade technologies, libraries, and design patterns to build the next generation of scalable interfaces.
+            A practical stack shaped by software engineering coursework, AI projects, REST API development, database design, and hands-on QA workflows.
           </p>
         </div>
 

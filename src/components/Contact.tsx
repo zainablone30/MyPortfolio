@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Send, CheckCircle2, Github, Linkedin, Twitter, Instagram, Mail, MapPin, Sparkles } from "lucide-react";
+import { Send, CheckCircle2, Github, Linkedin, Mail, MapPin, Phone, Sparkles } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -53,7 +53,7 @@ export default function Contact() {
           </h2>
           
           <p className="mt-4 text-gray-400 max-w-xl text-sm sm:text-base leading-relaxed">
-            Currently accepting select freelance client work, remote contract roles, and design collaborations. Let's make something amazing.
+            Open to internships, junior software engineering roles, AI/full-stack projects, QA collaborations, and selective freelance work.
           </p>
         </div>
 
@@ -68,11 +68,11 @@ export default function Contact() {
             className="lg:col-span-5 flex flex-col gap-8 lg:pr-8"
           >
             <h3 className="font-display font-bold text-2xl text-white">
-              Let's craft the future together.
+              Let's build useful software together.
             </h3>
             
             <p className="text-gray-400 text-sm leading-relaxed">
-              Have a visionary concept, a complex engineering challenge, or a custom design system you want to bring to life? Drop me a line and let's coordinate.
+              Have an AI-powered product idea, a full-stack build, a QA workflow, or a student collaboration opportunity? Send the details and I will get back to you.
             </p>
 
             <div className="flex flex-col gap-5 mt-4">
@@ -82,7 +82,7 @@ export default function Contact() {
                 </div>
                 <div className="flex flex-col">
                   <span className="font-mono text-[10px] uppercase text-gray-500 tracking-wider">Direct Email</span>
-                  <a href="mailto:alex@riveradesign.io" className="text-sm font-semibold">alex@riveradesign.io</a>
+                  <a href="mailto:zasif9204@gmail.com" className="text-sm font-semibold">zasif9204@gmail.com</a>
                 </div>
               </div>
 
@@ -92,7 +92,16 @@ export default function Contact() {
                 </div>
                 <div className="flex flex-col">
                   <span className="font-mono text-[10px] uppercase text-gray-500 tracking-wider">Headquarters</span>
-                  <span className="text-sm font-semibold">San Francisco, California</span>
+                  <span className="text-sm font-semibold">Islamabad, Pakistan</span>
+                </div>
+              </div>
+              <div className="flex items-center gap-4 text-gray-400 hover:text-purple-300 transition-colors">
+                <div className="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/10 flex items-center justify-center text-purple-400">
+                  <Phone className="w-5 h-5" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="font-mono text-[10px] uppercase text-gray-500 tracking-wider">Phone</span>
+                  <a href="tel:+923118884288" className="text-sm font-semibold">+92 311 8884288</a>
                 </div>
               </div>
             </div>
@@ -102,7 +111,7 @@ export default function Contact() {
               <span className="font-mono text-[10px] uppercase text-gray-500 tracking-widest font-bold">Find me on the grid</span>
               <div className="flex gap-4">
                 <a
-                  href="https://github.com"
+                  href="https://github.com/zainablone30"
                   target="_blank"
                   rel="noreferrer"
                   className="w-10 h-10 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:border-purple-500/30 transition-all duration-300 hover:scale-105"
@@ -110,7 +119,7 @@ export default function Contact() {
                   <Github className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://linkedin.com/in/zainabasif30"
                   target="_blank"
                   rel="noreferrer"
                   className="w-10 h-10 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:border-blue-500/30 transition-all duration-300 hover:scale-105"
@@ -118,20 +127,12 @@ export default function Contact() {
                   <Linkedin className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://twitter.com"
+                  href="mailto:zasif9204@gmail.com"
                   target="_blank"
                   rel="noreferrer"
                   className="w-10 h-10 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:border-purple-500/30 transition-all duration-300 hover:scale-105"
                 >
-                  <Twitter className="w-5 h-5" />
-                </a>
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-10 h-10 rounded-xl bg-white/5 border border-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:border-blue-500/30 transition-all duration-300 hover:scale-105"
-                >
-                  <Instagram className="w-5 h-5" />
+                  <Mail className="w-5 h-5" />
                 </a>
               </div>
             </div>
@@ -161,7 +162,7 @@ export default function Contact() {
                     <div className="flex flex-col gap-2">
                       <h4 className="font-display font-extrabold text-2xl text-white">Transmission Received</h4>
                       <p className="text-gray-400 text-sm max-w-sm">
-                        Thank you for reaching out! I've received your query and will coordinate a reply within 24 business hours.
+                        Thank you for reaching out! I have received your message and will coordinate a reply soon.
                       </p>
                     </div>
                     <button
@@ -226,7 +227,7 @@ export default function Contact() {
                         required
                         value={formData.message}
                         onChange={handleChange}
-                        placeholder="Tell me about your vision, timeline, and deliverables..."
+                        placeholder="Tell me about the role, project, collaboration, timeline, and deliverables..."
                         rows={5}
                         className="px-4 py-3 bg-black/30 border border-white/10 rounded-xl focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/50 focus:outline-none transition-all text-sm text-white font-sans resize-none"
                       />
@@ -269,9 +270,9 @@ export default function Contact() {
       <footer className="mt-24 sm:mt-32 pt-12 border-t border-white/5 relative z-10">
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-col items-center md:items-start gap-1.5">
-              <span className="font-display font-extrabold text-lg tracking-widest text-white">Zainab_Asif</span>
+            <span className="font-display font-extrabold text-lg tracking-widest text-white">Zainab_Asif</span>
             <span className="font-mono text-[10px] text-gray-500 uppercase tracking-widest">
-                © 2026 Zainab_Asif. ALL RIGHTS RESERVED.
+              Copyright 2026 Zainab_Asif. ALL RIGHTS RESERVED.
             </span>
           </div>
 
@@ -284,7 +285,7 @@ export default function Contact() {
 
           <div className="flex gap-2 items-center text-[10px] font-mono text-gray-600">
             <Sparkles className="w-3.5 h-3.5 text-purple-500/60 animate-pulse" />
-            ENGINEERED WITH DIGITAL PRECISION
+            BUILT WITH AI, FULL-STACK, AND QA FOCUS
           </div>
         </div>
       </footer>

@@ -1,5 +1,8 @@
 import { motion } from "motion/react";
 import { ExternalLink, Github, ArrowRight } from "lucide-react";
+import dastarkhanImage from "../assets/dastarkhan-ai.png";
+import autocampImage from "../assets/autocamp.png";
+import healthcareImage from "../assets/healthcare.jpeg";
 
 interface Project {
   title: string;
@@ -12,36 +15,44 @@ interface Project {
 
 const projectsList: Project[] = [
   {
-    title: "Nexus DeFi Terminal",
-    description: "A premium, real-time trading interface and analytics panel for advanced decentralized liquidity providers with instant telemetry metrics and canvas charting.",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBYUjIu4j25_s-gKQhC8RYYSmb1g_ElQEhAVYax7Neh13aeerErQHH45cgbK0e8sTela_PckIQ6KU2NlN5qbifO29CE-5_ViIuNg4lF0Lh8Zx5TOopBBM7nSDcGp46LXMkg1UMerZdyv2GAIZuCt6juxhzXUwwldciTNNb5JC7evYc_I8odrNoU8nNN3SfpQ2QsJC4LPxHIyPWhAd04xoeroM_uN5BjIJX7fwHzQnXSsPLISWyhaNwYSgq4HdP1syf6-Uf3FaNBmA",
-    tags: ["Next.js", "WebGL", "TypeScript", "TailwindCSS"],
-    liveLink: "https://github.com",
-    gitLink: "https://github.com"
+    title: "Dastarkhan AI",
+    description: "An AI-powered smart food assistance platform with personalized meal recommendations based on dietary preferences, behavior patterns, nutritional data, and real-time full-stack data flow.",
+    image: dastarkhanImage,
+    tags: ["React.js", "Node.js", "MongoDB", "Python ML"],
+    liveLink: "https://www.dastarkhan.app/",
+    gitLink: "https://github.com/zainablone30"
   },
   {
-    title: "EcoVoyage Planner",
-    description: "An innovative mobile-first travel itinerary and carbon offset optimization suite with highly polished micro-interactions and interactive global map plotting.",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuC6cehmswANVY408TKWRcT7WOnagQKw9x4DWM3FM3iJcatsfYTFUU4pTOvLOE-Y9nT6FVeh0A7A5RRMLiMOUgYAO11sDnJittCeX4uYCpSx6nnRweFIsKHAdXl57h-auKhACY3qyNURswkgH-3YihXKHBjNQGtOoTmDuzw5laoXGRbs-tUH3-HzhF0IvbA-r5yvbot73Dt24BpxfsGFuU_zRGXwmYPqdE1NwcpxES_Nb77tZnnHM6mVY0c9q9d4UNh7Kx1jfXAwIw",
-    tags: ["React Native", "Node.js", "GraphQL", "Framer Motion"],
-    liveLink: "https://github.com",
-    gitLink: "https://github.com"
+    title: "Autocamp",
+    description: "An AI-powered automated camping and outdoor experience platform that recommends campsites, gear, routes, and activities using user preferences, environmental data, and external APIs.",
+    image: autocampImage,
+    tags: ["React.js", "Express.js", "REST APIs", "AI"],
+    liveLink: "https://github.com/zainablone30",
+    gitLink: "https://github.com/zainablone30"
   },
   {
-    title: "Vanguard Couture",
-    description: "A sophisticated headless commerce storefront for a high-end conceptual fashion brand, featuring smooth custom-curated viewports and seamless checkout flows.",
+    title: "Evenza",
+    description: "A full-stack event management web app for university societies with authentication, event registration, booking, payment proof submission, admin approvals, and manual QA test coverage.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDlWo0U-QAUDtTxgTB59ZNPh-AMPNZhCkNZ4hiBUv5QZdUzSiGnyeN68vQrRcVa6vsvgqkENbcLiiu4lknoSAnugDc0egc5TNyI7hJon-f4wIZ_W-UQhhd6nFs-DctNzpgB9IKzrmpYCFnsLILVWjxIEjaj2NC_tp6V9SBDJmWPc1ibM5rQrWTm-UfhL6iTN61WtfDpT7x3uyyCz87LmzFX7pwuvE11D-o8V4afo3WQOslEOtG9Ok57fskbkYnGTiptWOGx-r6QHg",
-    tags: ["Shopify Graph", "React", "TailwindCSS", "Vite"],
-    liveLink: "https://github.com",
-    gitLink: "https://github.com"
+    tags: ["React.js", "Node.js", "MongoDB", "QA"],
+    liveLink: "https://github.com/zainablone30",
+    gitLink: "https://github.com/zainablone30"
   },
   {
-    title: "Orion Cloud Console",
-    description: "Enterprise-grade cloud management and edge server orchestration dashboard featuring immediate node state maps and sub-millisecond status logging.",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCBEI29Z5a8cx7e2Jxu2ZtUhuD1FRSJaDAdJUQPok2PEDS6Sk2kpUW5YMKiojce955ibOaRDS2aXczMtuA9Bfer6tEYb-CFP8RZcEdELSMPxJlGej89eGrXH6QhmMj4E-vGj5IPIMZFWrhHFlQUY4qUGtft6yad3NmoC4HHxV3-nrMiZ6vGwVcPS6a0pXm7ZuUr9iieVem2QVqZ1Izimhv8_1iWLJxWleK0iZ-u3e37Q_soXAx7J40xUBjRdzNa1OEDSvcB-B_Efw",
-    tags: ["React", "Rust API", "Docker", "TailwindCSS"],
-    liveLink: "https://github.com",
-    gitLink: "https://github.com"
+    title: "AI-Based Healthcare System",
+    description: "A machine learning healthcare project for symptom-based disease prediction, including preprocessing, feature engineering, iterative model optimization, and an interactive insights interface.",
+    image: healthcareImage,
+    tags: ["Python", "Machine Learning", "Data Preprocessing", "Healthcare"],
+    liveLink: "https://github.com/zainablone30",
+    gitLink: "https://github.com/zainablone30"
+  },
+  {
+    title: "Bank & ATM Management System",
+    description: "A secure banking system with CRUD operations, deposits, withdrawals, transfers, input validation, and data-structure-backed search and sorting using arrays, linked lists, and queues.",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBYUjIu4j25_s-gKQhC8RYYSmb1g_ElQEhAVYax7Neh13aeerErQHH45cgbK0e8sTela_PckIQ6KU2NlN5qbifO29CE-5_ViIuNg4lF0Lh8Zx5TOopBBM7nSDcGp46LXMkg1UMerZdyv2GAIZuCt6juxhzXUwwldciTNNb5JC7evYc_I8odrNoU8nNN3SfpQ2QsJC4LPxHIyPWhAd04xoeroM_uN5BjIJX7fwHzQnXSsPLISWyhaNwYSgq4HdP1syf6-Uf3FaNBmA",
+    tags: ["Java", "C++", "CRUD", "Data Structures"],
+    liveLink: "https://github.com/zainablone30",
+    gitLink: "https://github.com/zainablone30"
   }
 ];
 
@@ -66,15 +77,15 @@ export default function Projects() {
               </span>
             </div>
             <h2 className="font-display font-extrabold text-4xl sm:text-5xl text-white tracking-tight leading-tight">
-              Featured <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Ventures</span>
+              Featured <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Projects</span>
             </h2>
             <p className="text-gray-400 max-w-xl text-sm sm:text-base leading-relaxed">
-              A meticulously curated selection of my most impactful digital builds and software deployments.
+              A focused selection of AI, full-stack, QA, and data-structure projects drawn from my Software Engineering work.
             </p>
           </div>
 
           <motion.a
-            href="https://github.com"
+            href="https://github.com/zainablone30"
             target="_blank"
             rel="noreferrer"
             whileHover={{ x: 5 }}

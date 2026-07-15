@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { motion, useInView } from "motion/react";
-import { Award, Code2, Users, Coffee } from "lucide-react";
+import { Award, Code2, Users } from "lucide-react";
 
 interface CounterProps {
   value: number;
@@ -67,27 +67,27 @@ export default function About() {
             </div>
 
             <h2 className="font-display font-extrabold text-4xl sm:text-5xl text-white tracking-tight leading-[1.1]">
-              Crafting Digital <br />
+              Building AI-Ready <br />
               <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-                Masterpieces
+                Software
               </span>
             </h2>
 
             <p className="text-gray-400 text-base sm:text-lg leading-relaxed mt-2">
-              Based in San Francisco, I specialize in building high-performance web applications that merge architectural precision with fluid interactive experiences. My approach is rooted in the belief that code is a craft, and every pixel serves a purpose.
+              I am a Software Engineering student at Bahria University in Islamabad, focused on full-stack development, AI integration, and reliable web experiences. My strongest work sits at the intersection of React.js interfaces, Node.js APIs, MongoDB data models, and Python-based machine learning.
             </p>
 
             <p className="text-gray-400/80 text-sm sm:text-base leading-relaxed">
-              Whether it's architecting a scalable React ecosystem or designing a bespoke CSS-in-JS design system, I focus on creating tools that empower users and businesses alike. I strive to build software that is not only robust under the hood but delightful and intuitive at every touchpoint.
+              Across projects like Dastarkhan AI, Autocamp, Evenza, and an AI-based healthcare system, I have built recommendation flows, authentication, booking workflows, REST APIs, responsive UI, and test cases for real product behavior. I also bring freelance Shopify experience, coordinating store updates, product listings, theme customization, and order workflows for a client-facing store.
             </p>
 
             <div className="flex gap-4 items-center mt-4">
               <div className="flex -space-x-3">
-                <div className="w-10 h-10 rounded-full border border-[#0a0a0f] bg-purple-600/30 flex items-center justify-center font-mono text-xs text-white">TS</div>
+                <div className="w-10 h-10 rounded-full border border-[#0a0a0f] bg-purple-600/30 flex items-center justify-center font-mono text-xs text-white">AI</div>
                 <div className="w-10 h-10 rounded-full border border-[#0a0a0f] bg-blue-600/30 flex items-center justify-center font-mono text-xs text-white">RE</div>
-                <div className="w-10 h-10 rounded-full border border-[#0a0a0f] bg-indigo-600/30 flex items-center justify-center font-mono text-xs text-white">ND</div>
+                <div className="w-10 h-10 rounded-full border border-[#0a0a0f] bg-indigo-600/30 flex items-center justify-center font-mono text-xs text-white">QA</div>
               </div>
-              <span className="text-xs font-mono text-gray-500">Trusted by modern engineering teams</span>
+              <span className="text-xs font-mono text-gray-500">AI, full-stack, and QA-minded development</span>
             </div>
           </motion.div>
 
@@ -105,9 +105,9 @@ export default function About() {
                 <Award className="w-6 h-6" />
               </div>
               <div className="flex flex-col">
-                <Counter value={5} suffix="+" />
+                <Counter value={27} suffix="+" />
                 <span className="text-xs font-mono text-gray-500 uppercase tracking-widest mt-1">
-                  Years of Experience
+                  Microsoft Learn Badges
                 </span>
               </div>
             </div>
@@ -118,9 +118,9 @@ export default function About() {
                 <Code2 className="w-6 h-6" />
               </div>
               <div className="flex flex-col">
-                <Counter value={40} suffix="+" />
+                <Counter value={5} suffix="+" />
                 <span className="text-xs font-mono text-gray-500 uppercase tracking-widest mt-1">
-                  Projects Completed
+                  Featured Projects
                 </span>
               </div>
             </div>
@@ -131,18 +131,18 @@ export default function About() {
                 <Users className="w-6 h-6" />
               </div>
               <div className="flex flex-col">
-                <Counter value={25} suffix="+" />
+                <Counter value={100} suffix="+" />
                 <span className="text-xs font-mono text-gray-500 uppercase tracking-widest mt-1">
-                  Happy Global Clients
+                  Hackathon Teams Competed Against
                 </span>
               </div>
             </div>
 
             {/* Mini tagline inside cards */}
             <div className="sm:col-span-2 glass-panel p-4 rounded-xl flex items-center justify-center gap-3 border-dashed border-purple-500/20 bg-purple-500/5">
-              <Coffee className="w-4 h-4 text-purple-400 animate-bounce" />
+              <Award className="w-4 h-4 text-purple-400 animate-bounce" />
               <span className="text-xs font-mono text-purple-300">
-                12,000+ Liters of high-grade coffee consumed
+                AI Hackathon 4th place - top 4% across 25+ universities
               </span>
             </div>
           </motion.div>

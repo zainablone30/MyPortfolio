@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Github, Linkedin, Twitter, Instagram, ArrowDown, MessageSquare, Briefcase } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowDown, MessageSquare, Briefcase } from "lucide-react";
 
 export default function Hero() {
   const roles = [
-    "SOFTWARE ENGINEER",
-    "Frontend Engineer",
-    "UI/UX Craftsman",
-    "Full-Stack Dev",
-    "Problem Solver",
+    "Software Engineering Student",
+    "AI & Full-Stack Developer",
+    "Machine Learning Learner",
+    "React.js / Node.js Builder",
+    "QA-Minded Problem Solver",
   ];
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [currentText, setCurrentText] = useState("");
@@ -101,7 +101,7 @@ export default function Hero() {
             className="flex flex-col gap-6 items-center"
           >
             <a
-              href="https://github.com"
+              href="https://github.com/zainablone30"
               target="_blank"
               rel="noreferrer"
               className="text-gray-400 hover:text-purple-400 hover:scale-110 transition-all p-1"
@@ -109,7 +109,7 @@ export default function Hero() {
               <Github className="w-5 h-5" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/zainabasif30"
               target="_blank"
               rel="noreferrer"
               className="text-gray-400 hover:text-blue-400 hover:scale-110 transition-all p-1"
@@ -117,20 +117,12 @@ export default function Hero() {
               <Linkedin className="w-5 h-5" />
             </a>
             <a
-              href="https://twitter.com"
+              href="mailto:zasif9204@gmail.com"
               target="_blank"
               rel="noreferrer"
               className="text-gray-400 hover:text-purple-400 hover:scale-110 transition-all p-1"
             >
-              <Twitter className="w-5 h-5" />
-            </a>
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noreferrer"
-              className="text-gray-400 hover:text-blue-400 hover:scale-110 transition-all p-1"
-            >
-              <Instagram className="w-5 h-5" />
+              <Mail className="w-5 h-5" />
             </a>
             <div className="w-px h-16 bg-gradient-to-b from-purple-500/50 to-transparent mt-2" />
           </motion.div>
@@ -147,7 +139,7 @@ export default function Hero() {
           <div className="inline-flex self-center md:self-start items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 mb-6 backdrop-blur-md">
             <span className="w-2 h-2 rounded-full bg-purple-500 animate-pulse" />
             <span className="text-xs font-mono tracking-widest text-purple-300 uppercase">
-              Ready for Freelance & Remote
+              Islamabad based AI & Full-Stack Developer
             </span>
           </div>
 
@@ -171,8 +163,8 @@ export default function Hero() {
 
           {/* Intro Text */}
           <p className="mt-4 text-gray-400 text-base sm:text-lg max-w-xl leading-relaxed">
-            I build next-generation web applications with absolute technical precision and fluid interactivity.
-            Specializing in React systems, bespoke animations, and performance architectures.
+            I build practical AI-powered web applications with React.js, Node.js, MongoDB, and Python.
+            My work blends full-stack engineering, machine learning fundamentals, and careful testing for reliable user-centered products.
           </p>
 
           {/* Actions */}
