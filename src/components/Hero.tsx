@@ -3,7 +3,13 @@ import { motion, AnimatePresence } from "motion/react";
 import { Github, Linkedin, Twitter, Instagram, ArrowDown, MessageSquare, Briefcase } from "lucide-react";
 
 export default function Hero() {
-  const roles = ["Frontend Engineer", "UI/UX Craftsman", "Full-Stack Dev", "Problem Solver"];
+  const roles = [
+    "SOFTWARE ENGINEER",
+    "Frontend Engineer",
+    "UI/UX Craftsman",
+    "Full-Stack Dev",
+    "Problem Solver",
+  ];
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [currentText, setCurrentText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
