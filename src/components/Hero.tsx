@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Github, Linkedin, Mail, ArrowDown, MessageSquare, Briefcase } from "lucide-react";
+import { useRef } from "react";
 
 export default function Hero() {
   const roles = [
@@ -204,20 +205,7 @@ export default function Hero() {
             {/* Main Circle container */}
             <div className="w-full h-full rounded-full overflow-hidden bg-black/40 relative group">
               {/* Clearly marked placeholder <video> tag as requested */}
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 scale-105 group-hover:scale-100"
-              >
-                {/* 
-                  PLACEHOLDER FOR ALPHACHANNEL/TRANSPARENT WEBM OR AVATAR INTRO VIDEO.
-                  Drop your premium speaking-avatar .webm or .mp4 file below:
-                */}
-                <source src="https://assets.mixkit.co/videos/preview/mixkit-cyberpunk-digital-human-avatar-talking-41983-large.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              <VideoAvatar />
 
               {/* Decorative Scanline/Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-transparent to-transparent opacity-60 pointer-events-none" />
@@ -244,5 +232,71 @@ export default function Hero() {
         </motion.div>
       </motion.div>
     </section>
+  );
+}
+
+function VideoAvatar() {
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [soundEnabled, setSoundEnabled] = useState(false);
+
+  useEffect(() => {
+    const tryPlayUnmuted = async () => {
+      const v = videoRef.current;
+      if (!v) return;
+      v.muted = true; // start muted so autoplay is allowed
+      try {
+        await v.play();
+        // Try to unmute and play when permitted
+        v.muted = false;
+        await v.play();
+        setSoundEnabled(true);
+      } catch (err) {
+        // Browser blocked autoplay with sound. Keep muted and show control.
+        v.muted = true;
+        setSoundEnabled(false);
+      }
+    };
+
+    tryPlayUnmuted();
+  }, []);
+
+  const enableSound = async () => {
+    const v = videoRef.current;
+    if (!v) return;
+    try {
+      v.muted = false;
+      await v.play();
+      setSoundEnabled(true);
+    } catch (err) {
+      console.warn("Could not enable sound:", err);
+    }
+  };
+
+  return (
+    <div className="w-full h-full relative">
+      <video
+        ref={videoRef}
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 scale-105 group-hover:scale-100"
+      >
+        {/* Place your file at public/avatar.mp4 */}
+        <source src="/avatar.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      {!soundEnabled && (
+        <button
+          onClick={enableSound}
+          className="absolute bottom-4 right-4 bg-purple-600/80 text-white px-3 py-2 rounded-full text-sm backdrop-blur-md shadow-lg"
+          aria-label="Enable voice"
+        >
+          Play with sound
+        </button>
+      )}
+    </div>
   );
 }
