@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Github, Linkedin, Mail, ArrowDown, MessageSquare, Briefcase } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowDown, MessageSquare, Briefcase, Volume2 } from "lucide-react";
 import { useRef } from "react";
 
 export default function Hero() {
@@ -288,13 +288,15 @@ function VideoAvatar() {
         Your browser does not support the video tag.
       </video>
 
+      {/* Icon-only sound button (no visible text) shown only when sound is disabled */}
       {!soundEnabled && (
         <button
           onClick={enableSound}
-          className="absolute bottom-4 right-4 bg-purple-600/80 text-white px-3 py-2 rounded-full text-sm backdrop-blur-md shadow-lg"
+          className="absolute bottom-4 right-4 bg-purple-600/80 text-white p-2 rounded-full backdrop-blur-md shadow-lg flex items-center justify-center"
           aria-label="Enable voice"
+          title="Enable voice"
         >
-          Play with sound
+          <Volume2 className="w-4 h-4" />
         </button>
       )}
     </div>
