@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { motion } from "motion/react";
 import {
   Code2,
@@ -44,6 +44,9 @@ export default function Skills() {
   // Skill Card Subcomponent with 3D Tilt Effect
   const TiltCard = ({ skill, index }: { skill: Skill; index: number; key?: string }) => {
     const [tiltStyle, setTiltStyle] = useState<React.CSSProperties>({});
+    const cardRef = useRef<HTMLDivElement | null>(null);
+    const overlayRef = useRef<HTMLDivElement | null>(null);
+    const loggedRef = useRef(false);
 
     const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
       const card = e.currentTarget;
@@ -61,6 +64,24 @@ export default function Skills() {
         transform: `perspective(600px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`,
         boxShadow: "0 15px 35px -10px rgba(124, 58, 237, 0.2)"
       });
+
+      // One-time debug log to capture computed styles and the element under the cursor
+      try {
+        if (!loggedRef.current) {
+          const cardEl = cardRef.current || card;
+          const overlayEl = overlayRef.current;
+          const top = document.elementFromPoint(e.clientX, e.clientY) as Element | null;
+          console.log("[SKILL-HOVER]", skill.name, {
+            cardComputed: cardEl ? getComputedStyle(cardEl) : null,
+            overlayComputed: overlayEl ? getComputedStyle(overlayEl) : null,
+            topElement: top,
+            topComputed: top ? getComputedStyle(top as Element) : null
+          });
+          loggedRef.current = true;
+        }
+      } catch (err) {
+        console.warn("Hover logger error", err);
+      }
     };
 
     const handleMouseLeave = () => {
@@ -68,6 +89,7 @@ export default function Skills() {
         transform: "perspective(600px) rotateX(0deg) rotateY(0deg) scale(1)",
         boxShadow: "none"
       });
+      loggedRef.current = false;
     };
 
     const IconComponent = skill.icon;
@@ -79,14 +101,15 @@ export default function Skills() {
           visible: { opacity: 1, y: 0 }
         }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-        onMouseEnter={() => setHoveredIndex(index)}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+          onMouseEnter={() => setHoveredIndex(index)}
+        ref={cardRef}
         style={tiltStyle}
-        className="glass-panel p-6 rounded-2xl flex flex-col gap-4 relative group cursor-default select-none border border-white/5 transition-all duration-200"
+        className="glass-panel p-6 rounded-2xl flex flex-col gap-4 relative group cursor-default select-none border border-white/5 transition-all duration-200 z-50"
       >
         {/* Glow Background effect on card hover */}
-        <div className={`absolute -inset-px rounded-2xl bg-gradient-to-r ${skill.color} opacity-0 group-hover:opacity-10 blur-md transition-opacity duration-300 pointer-events-none`} />
+        <div ref={overlayRef} className={`absolute -inset-px rounded-2xl bg-gradient-to-r ${skill.color} opacity-0 group-hover:opacity-10 blur-md transition-opacity duration-300 pointer-events-none`} />
 
         {/* Header / Icon */}
         <div className="flex items-center justify-between">
