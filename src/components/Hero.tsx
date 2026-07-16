@@ -237,6 +237,7 @@ export default function Hero() {
 function VideoAvatar() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [soundEnabled, setSoundEnabled] = useState(false);
+  const [hasStarted, setHasStarted] = useState(false);
 
   useEffect(() => {
     const tryPlayUnmuted = async () => {
@@ -249,10 +250,12 @@ function VideoAvatar() {
         v.muted = false;
         await v.play();
         setSoundEnabled(true);
+        setHasStarted(true);
       } catch (err) {
         // Browser blocked autoplay with sound. Keep muted and show control.
         v.muted = true;
         setSoundEnabled(false);
+        setHasStarted(false);
       }
     };
 
@@ -266,6 +269,7 @@ function VideoAvatar() {
       v.muted = false;
       await v.play();
       setSoundEnabled(true);
+      setHasStarted(true);
     } catch (err) {
       console.warn("Could not enable sound:", err);
     }
@@ -290,16 +294,30 @@ function VideoAvatar() {
         <source src="/avatar.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-
-      {/* Icon-only sound button (no visible text) shown only when sound is disabled */}
-      {!soundEnabled && (
+      {/* Center play overlay shown when autoplay is blocked or user hasn't started playback */}
+      {!hasStarted && (
         <button
-          onClick={enableSound}
-          className="absolute bottom-4 right-4 bg-purple-600/80 text-white p-2 rounded-full backdrop-blur-md shadow-lg flex items-center justify-center"
-          aria-label="Enable voice"
-          title="Enable voice"
+          onClick={async () => {
+            const v = videoRef.current;
+            if (!v) return;
+            try {
+              v.muted = false;
+              await v.play();
+              setSoundEnabled(true);
+              setHasStarted(true);
+            } catch (err) {
+              // If unmuting fails, at least start muted playback
+              try { v.muted = true; await v.play(); setHasStarted(true); } catch {};
+            }
+          }}
+          className="absolute inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm"
+          aria-label="Play avatar"
         >
-          <Volume2 className="w-4 h-4" />
+          <div className="bg-purple-600/90 p-3 rounded-full shadow-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-6.518-3.76A1 1 0 007 8.238v7.524a1 1 0 001.234.97l6.518-1.997a1 1 0 00.0-1.467z" />
+            </svg>
+          </div>
         </button>
       )}
     </div>
