@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Github, Linkedin, Mail, ArrowDown, MessageSquare, Briefcase, Volume2 } from "lucide-react";
-import { useRef } from "react";
 
 export default function Hero() {
   const roles = [
