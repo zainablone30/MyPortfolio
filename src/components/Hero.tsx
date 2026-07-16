@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Github, Linkedin, Mail, ArrowDown, MessageSquare, Briefcase, Volume2 } from "lucide-react";
 import { useRef } from "react";
@@ -281,6 +281,10 @@ function VideoAvatar() {
         muted
         playsInline
         preload="auto"
+        onLoadedData={() => console.log('[VideoAvatar] loaded data')}
+        onCanPlay={() => console.log('[VideoAvatar] can play')}
+        onPlay={() => console.log('[VideoAvatar] playing')}
+        onError={(e) => console.error('[VideoAvatar] error loading/playing', e)}
         className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 scale-105 group-hover:scale-100"
       >
         {/* Place your file at public/avatar.mp4 */}
